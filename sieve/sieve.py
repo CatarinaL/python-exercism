@@ -22,10 +22,9 @@ def sieve(limit):
     my_list = [num for num in range(2, (limit+1))]
     #move to next n(num), 2(2)=4, my_list[num(n)], mark with -1
     for num in my_list:
-        if num != -1:
-            for i in range(num, len(my_list), num):
-                my_list[i] = -1 
-
+        for i in range((num-1)*2, len(my_list), num):
+            my_list[i] = -1
+    
     my_list = [num for num in my_list if num != -1]
 
     return my_list
