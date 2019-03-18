@@ -1,7 +1,7 @@
 def is_pangram(sentence):
     alphabet = "abcdefghijklmnopqrstuvwxyz"
-    s = sentence.lower()
+    s = set([char for char in sentence.lower()])
     for letter in alphabet:
-        if (s.find(letter) == -1):
+        if letter not in s:
             return False
     return True
